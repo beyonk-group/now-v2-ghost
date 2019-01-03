@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "name": "now-v2-demo",
+  "version": "1.0.3",
+  "description": "now ghost v2 example",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/antony/now-v2-ghost.git"
+  },
+  "author": "Antony Jones <antony@beyonk.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/now-examples/ghost/issues"
+  },
+  "homepage": "https://github.com/now-examples/ghost#readme",
+  "dependencies": {
+    "ghost": "^2.6.0",
+    "ghost-storage-adapter-gcloud": "0.0.4"
+  },
+  "devDependencies": {
+    "knex-migrator": "^3.1.6"
+  }
+}

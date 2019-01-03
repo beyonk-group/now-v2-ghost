@@ -1,0 +1,32 @@
+version: 2
+jobs:
+  deploy-to-prod:
+    docker:
+      - image: circleci/node:10
+
+    working_directory: ~/workspace
+
+    steps:
+      - checkout
+
+      - run:
+          name: Deploy to now
+          environment:
+            CONFIG: ./.circleci/now.prod.json
+          command: |
+            sudo npm install --unsafe-perm -g now
+            now -A $CONFIG -e NODE_ENV=production --token=$NOW_TOKEN
+            now -A $CONFIG alias --token=$NOW_TOKEN
+            now --token=$NOW_TOKEN remove prod-iltld-blog --safe -y
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - deploy-to-prod:
+          context: beyonk
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /v.*/

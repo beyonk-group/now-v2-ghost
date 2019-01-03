@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "server.js", "use": "@now/node-server" }
+  ],
+  "routes": [
+    { "src": "/.*", "dest": "server.js" }
+  ],
+  "alias": [
+    "https://ghost-example.now.sh"
+  ],
+  "name": "ghost-example",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "regions": [
+    "bru"
+  ]
+}
