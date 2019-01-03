@@ -17,7 +17,7 @@ jobs:
             sudo npm install --unsafe-perm -g now
             now -A $CONFIG -e NODE_ENV=production --token=$NOW_TOKEN
             now -A $CONFIG alias --token=$NOW_TOKEN
-            now --token=$NOW_TOKEN remove prod-iltld-blog --safe -y
+            now --token=$NOW_TOKEN remove now-v2-ghost --safe -y
 
 workflows:
   version: 2
